@@ -1,0 +1,71 @@
+
+  743  mkdir terraform
+  744  cd terraform
+  745  git clone https://gitlab.com/soaresnetoh/terraform-gitlab.git
+  746  cd terraform-gitlab
+  747  code .
+  748  cd terraform
+  749  ls
+  750  cd production
+  751  ls
+  752  terraform output
+  753  terraform plan
+  754  terraform init
+  755  git stash
+  756  cd estudos
+  757  mkdir nodejs
+  758  cd nodejs
+  759  git clone https://github.com/soaresnetoh/covid19.git
+  760  cd covid19
+  761  ls
+  762  npm i
+  763  ls
+  764  code .
+  765  docker build -t covid19:v1 .
+  766  docker build -t covid19:v1 . --no-cache
+  767  ;
+  768  ..
+  769  mkdir vagrant
+  770  cp ../vagrant/vagrant-hybrid-lab/Vagrantfile .
+  771  code .
+  772  docker build -t covid19:v1 .
+  773  cd vagrant
+  774  ls
+  775  vagrant up ubuntu20
+  776  docker run -it --rm covid19:v1
+  777  docker run -itd --rm covid19:v1
+  778  docker container rm -F 0213
+  779  docker container rm -f 0213
+  780  docker container rm  0213
+  781  docker run -it --rm covid19:v1
+  782  docker build -t covid19:v1 .
+  783  vagrant up ubuntu20
+  784  docker run -it --rm -p 80:3000 covid19:v1
+  785  docker build -t covid19:v1 .
+  786  cp ../../vagrant/vagrant-hybrid-lab/provision.sh .
+  787  vagrant up ubuntu20
+  788  docker run -it --rm -p 80:3000 covid19:v1
+  789  vagrant ssh ubuntu20
+  790  wget https://github.com/docker/buildx/releases/download/v0.8.2/buildx-v0.8.2.linux-amd64
+  791  ./buildx-v0.8.2.linux-amd64
+  792  docker --version
+  793  docker buildx install
+  794  docker buildx
+  795  docker buildx  version
+  796  docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
+  797  cat /proc/sys/fs/binfmt_misc/qemu-aarch64
+  798  docker buildx create --name mybuilder
+  799  docker buildx use mybuilder
+  800  docker buildx inspect --bootstrap
+  801  #docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 --push -t jasonrandrews/hello .
+  802  #docker build -t covid19:v1 .
+  803  docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 --push  -t hernanisoares/covid19:all-plataform .
+  804  vagrant ssh ubuntu20
+  805  history
+  806  docker login
+  807  docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 --push  -t hernanisoares/covid19:all-plataform .
+  808  git status
+  809  git add .
+  810  git commit -am "Dockerfile"
+  811  git push
+  812  history
