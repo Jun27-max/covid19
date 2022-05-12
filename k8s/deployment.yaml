@@ -31,7 +31,7 @@ spec:
   selector:
     app: covid19
   ports:
-  - port: 80 # porta do container
+  - port: 8080 # porta do container
     targetPort: 3000 # porta da aplicação
     nodePort: 30000 # porta para acessar via k3d
   type: NodePort
