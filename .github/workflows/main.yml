@@ -27,8 +27,7 @@ jobs:
         with:
 #           context: "{{defaultContext}}:mysubdir"
           context: "{{defaultContext}}"
-          platforms: linux/arm64
-          # platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USER }}/covid19:latest
