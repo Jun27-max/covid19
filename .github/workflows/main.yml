@@ -29,4 +29,4 @@ jobs:
           context: "{{defaultContext}}"
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: hernanisoares/covid19:multi
+          tags: ${{ secrets.DOCKERHUB_USER }}/covid19:multi
