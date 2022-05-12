@@ -22,6 +22,7 @@ spec:
 
 --- 
 # Service da aplicação
+# kubectl port-forward <pod> <port_local>:3000
 
 apiVersion: v1
 kind: Service
