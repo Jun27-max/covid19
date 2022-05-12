@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: covid19
-        image: covid19:latest
+        image: hernanisoares/covid19:latest
         ports:
           - containerPort: 3000
 
