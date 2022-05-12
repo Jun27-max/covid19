@@ -5,8 +5,8 @@ on:
     branches:
       - 'master'
 
-CI:
-  docker:
+jobs:
+  CI:
     runs-on: ubuntu-latest
     steps:
       -
