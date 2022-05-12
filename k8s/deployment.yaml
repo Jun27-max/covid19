@@ -1,5 +1,3 @@
-# deployment do mongodb
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -27,10 +25,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web
+  name: covid19
 spec:
   selector:
-    app: web
+    app: covid19
   ports:
   - port: 80 # porta do container
     targetPort: 3000 # porta da aplicação
