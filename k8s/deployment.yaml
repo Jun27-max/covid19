@@ -1,0 +1,38 @@
+# deployment do mongodb
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: covid19
+spec:
+  selector:
+    matchLabels:
+      app: covid19
+  
+  template:
+    metadata:
+      labels:
+        app: covid19
+    
+    spec:
+      containers:
+      - name: covid19
+        image: covid19:latest
+        ports:
+          - containerPort: 3000
+
+--- 
+# Service da aplicação
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  selector:
+    app: web
+  ports:
+  - port: 80 # porta do container
+    targetPort: 3000 # porta da aplicação
+    nodePort: 30000 # porta para acessar via k3d
+  type: NodePort

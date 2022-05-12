@@ -29,4 +29,26 @@ jobs:
           context: "{{defaultContext}}"
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: ${{ secrets.DOCKERHUB_USER }}/covid19:multi
+          tags: |
+            ${{ secrets.DOCKERHUB_USER }}/covid19:latest
+            ${{ secrets.DOCKERHUB_USER }}/covid19:${{ github.run_number }}
+
+
+  CD:
+    needs: [CI]
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      - uses: azure/k8s-set-context@v2
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBECONFIG_K8S }}
+#           context: <context name> # current-context from kubeconfig is used as default
+      - name: Deploy to Kubernetes cluster
+        uses: Azure/k8s-deploy@v3.0
+        with:
+          images: ${{ secrets.DOCKERHUB_USER }}/covid19:latest
+          manifests: |
+            k8s/deployment.yaml
