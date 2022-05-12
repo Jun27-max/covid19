@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
       - name: covid19
+        tty: true
         image: hernanisoares/covid19:latest
         ports:
           - containerPort: 3000
